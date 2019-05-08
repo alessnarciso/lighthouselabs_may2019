@@ -4,7 +4,7 @@ function powerOn(){
     ship.powerOn = true;
 }
 
-//CHALLENGE 1
+//CHALLENGE 2
 function countModules(){
   
  return availableModules.length;

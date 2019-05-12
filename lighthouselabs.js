@@ -104,3 +104,10 @@ function loadModules(index){
     
   }
     setMessage();
+
+    //CHALLENGE 10
+    function activateBeacon(){
+  
+    radio.beacon = true;
+  
+  }

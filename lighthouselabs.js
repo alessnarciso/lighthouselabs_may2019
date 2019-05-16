@@ -111,3 +111,87 @@ function loadModules(index){
     radio.beacon = true;
   
   }
+    //CHALLENGE 11
+    function setFrequency(){
+      
+      radio.frequency = (radio.range.high + radio.range.low) / 2;
+  }
+
+    //CHALLENGE 12
+    function initialize(){
+    
+    navigation.x = 0;
+    navigation.y = 0;
+    navigation.z = 0;
+  }
+
+  //CHALLENGE 13
+  function calibrateX(){
+  
+  for(let i = 0; i < 12; i++){
+    
+    signal = checkSignal();
+    
+    if(signal !== undefined)
+    {
+      navigation.x = signal;
+      break;
+      
+    }
+    
+  }
+}
+
+
+  //CHALLENGE 14
+  function calibrateY(){
+    
+    for(let i = 0; i < 60; i++){
+      
+      signal = checkSignal();
+      
+      if(signal !== undefined)
+      {
+        navigation.y = signal;
+        break;
+        
+      }
+      
+  }
+}
+
+  //calibrateY();
+
+  function calibrateZ(){
+    
+    for(let i = 0; i < 60; i++){
+      
+      signal = checkSignal();
+      
+      if(signal !== undefined)
+      {
+        navigation.z = signal;
+        break;
+        
+      }
+      
+    }
+}
+
+  //calibrateZ();
+
+  //CHALLENGE 15
+  function calibrate(){
+    
+    calibrateX();
+    calibrateY();
+    calibrateZ();
+}
+
+  //CHALLENGE 16
+  function setSpeed(speed){
+    
+    if (speed >= 0)
+      navigation.speed = parseInt(speed);
+  
+}

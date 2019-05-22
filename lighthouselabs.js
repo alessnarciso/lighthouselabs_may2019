@@ -195,3 +195,59 @@ function loadModules(index){
       navigation.speed = parseInt(speed);
   
 }
+
+  //CHALLENGE 17
+  function activateAntenna(){
+    
+    ship.antenna.active = true;
+    
+  }
+
+  //activateAntenna();
+
+  //CHALLENGE 18
+  function sendBroadcast(){
+    
+    for(let i = 0; i < 100; i++)
+      broadcast();
+    
+  }
+
+  //sendBroadcast();
+
+  //CHALLENGE 19
+  function configureBroadcast(){
+    
+    setFrequency();
+    activateAntenna();
+    sendBroadcast();
+    
+  }
+
+  configureBroadcast();
+
+  //CHALLENGE 20
+  function decodeMessage(message){
+    
+    message = message.replace(/0/g, "o");
+    message = message.replace(/1/g, "i");
+    message = message.replace(/2/g, "u");
+    message = message.replace(/3/g, "e");
+    message = message.replace(/4/g, "a");
+    message = message.replace(/5/g, "y");
+
+    return message;
+  }
+
+  //CHALLENGE 21
+  function returnToEarth(){
+    
+    var hexx = broadcast("x");
+    var hexy = broadcast("y");
+    var hexz = broadcast("z");
+    
+    navigation.x = parseInt(decodeMessage(hexx), 16);
+    navigation.y = parseInt(decodeMessage(hexy), 16);
+    navigation.z = parseInt(decodeMessage(hexz), 16);
+  }
+  returnToEarth();
